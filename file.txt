@@ -1,0 +1,69 @@
+* FILE TEST
+
+
+file="harsha/harsha_labs6.txt"
+if [ -s $file ]
+then
+   echo "File size is zero"
+ else
+   echo "File size is not zero"
+  fi
+if [ -r $file ]
+then
+   echo "File has read access"
+  else
+   echo "File does not have read access"
+  fi
+if [ -w $file ]
+then
+   echo "File has write permission"
+  else
+   echo "File does not have write permission"
+  fi
+if [ -x $file ]
+then
+   echo "File has execute permission"
+  else
+   echo "File does not have execute permission"
+  fi
+
+
+OUTPUT
+
+File size is not zero
+File does not read access
+File does not have write permission
+File does not have execute permission
+
+2.shell script to prefix all the filenames with the date dd/mm/YY format.
+
+file="/home/harsha/test"
+cdate=$(date +%d-%m-%Y)
+for file in *
+do      
+        mv "$file" "$cdate"_"$file"
+done 
+
+OUTPUT
+
+01-03-2018_t1
+01-03-2018_t2
+01-03-2018_t3
+
+3.File related commands.
+ a)cp-used to copy contents of one file to another.
+ b)rm-used to remove file from the existing directory.
+ c)mv-used to renmae a file within the directory.
+ d)cmp-used to compare the contents of two files inside the directory.
+ e)diff-used to find the difference in the contents of two files existing within the directory.
+  f)comm-used to find the common contents between the two files within the directory.
+ 
+4.setting permission to the file or directory.
+ # create a sample file within a directory,then perform the following:
+  $chmod u+x sample
+  $ls -l sample
+  
+5.use of commands find and xargs?
+#the find command is used to find the file within a directory 
+#the xargs command is used to build and execute commmands from standard inputs.
+
